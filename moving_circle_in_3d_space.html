@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation circle</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+        }
+        body 
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* using min-height we make things responsive and element inisde min-height can grow accordingly as it wants */
+            min-height: 100vh;
+            background-color: grey;
+        }
+
+        .loader
+        {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            /* The child elements remain in 3D space, maintaining perspective and depth. */
+            /* use for child element here loader is parent and span are childrens */
+            transform-style: preserve-3d;
+            /* perspective --> make depth in 3d Space of Child elemnt and rorate use to rotate element in 3d  */
+            transform: perspective(800px) rotateX(60deg);
+        }
+
+        .loader span
+        {
+            position: absolute;
+            display: block;
+            border: 5px solid;
+            box-shadow: 0 5px solid #e23a3a, inset 05px 0 #ccc;
+            box-sizing: border-box;
+            border-radius: 50%;
+            animation: animate  5s ease-in-out infinite;
+
+        }
+
+        @keyframes animate {
+
+            0%,100%
+            {
+                transform: translateZ(-50px);
+            }
+            50%
+            {
+                transform: translateZ(100px);
+            }
+        }
+        .loader span:nth-child(1)
+        {
+            top:0;
+            left:0;
+            bottom: 0;
+            right: 0;
+            animation-delay: 0.2s;
+        }
+
+        .loader span:nth-child(2)
+        {
+            left:10px;
+            bottom: 10px;
+            top:10px;
+            right: 10px;
+            animation-delay: 0.3s;
+        }
+        .loader span:nth-child(3)
+        {
+            top:20px;
+            left:20px;
+            bottom: 20px;
+            right: 20px;
+            animation-delay: 0.4s;
+        }
+        .loader span:nth-child(4)
+        {
+            top:30px;
+            left:30px;
+            bottom: 30px;
+            right: 30px;
+            animation-delay: 0.5s;
+        }
+        .loader span:nth-child(5)
+        {
+            top:50px;
+            left:50px;
+            bottom: 50px;
+            right: 50px;
+            animation-delay: 0.6s;
+        }
+
+        .loader span:nth-child(6)
+        {
+            top:60px;
+            left:60px;
+            bottom: 60px;
+            right: 60px;
+            animation-delay: 0.7s;
+        }
+
+        .loader span:nth-child(7)
+        {
+            top:70px;
+            left:70px;
+            bottom: 70px;
+            right: 70px;
+            animation-delay: 0.8s;
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+</html>
